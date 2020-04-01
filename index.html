@@ -20,11 +20,9 @@
 
 			import * as THREE from 'https://threejs.org/build/three.module.js';
 
-			import Stats from 'https://raw.githubusercontent.com/stewahn/collada/master/stats.module.js';
-
-			import { ColladaLoader } from 'https://raw.githubusercontent.com/stewahn/collada/master/ColladaLoader.js';
-
-			var container, stats, clock;
+			import { ColladaLoader } from 'https://threejs.org/examples/jsm/loaders/ColladaLoader.js';
+			
+			var container, clock;
 			var camera, scene, renderer, elf;
 
 			init();
@@ -77,11 +75,6 @@
 
 				//
 
-				stats = new Stats();
-				container.appendChild( stats.dom );
-
-				//
-
 				window.addEventListener( 'resize', onWindowResize, false );
 
 			}
@@ -100,7 +93,6 @@
 				requestAnimationFrame( animate );
 
 				render();
-				stats.update();
 
 			}
 
