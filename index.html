@@ -12,8 +12,8 @@
 
 		<div id="container"></div>
 		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> collada loader<br/>
-			Elf Girl by <a href="https://sketchfab.com/yellow09" target="_blank" rel="noopener">halloween</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC Attribution</a>
+			<a href="https://github.com/mrdoob/three.js" target="_blank" rel="noopener">Three.js for 3d-models in the browser</a><br/>
+			by stewahn <a href="https://github.com/stewahn" target="_blank" rel="noopener">halloween</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC Attribution</a>
 		</div>
 
 		<script type="module">
@@ -23,7 +23,7 @@
 			import { ColladaLoader } from 'https://threejs.org/examples/jsm/loaders/ColladaLoader.js';
 			
 			var container, clock;
-			var camera, scene, renderer, elf;
+			var camera, scene, renderer, simplegeometry;
 
 			init();
 			animate();
@@ -33,8 +33,8 @@
 				container = document.getElementById( 'container' );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
-				camera.position.set( 8, 10, 8 );
-				camera.lookAt( 0, 3, 0 );
+				camera.position.set( 0, 0, 8 );
+				camera.lookAt( 0, 0, 0 );
 
 				scene = new THREE.Scene();
 
@@ -44,7 +44,7 @@
 
 				var loadingManager = new THREE.LoadingManager( function () {
 
-					scene.add( elf );
+					scene.add( simplegeometry );
 
 				} );
 
@@ -53,7 +53,7 @@
 				var loader = new ColladaLoader( loadingManager );
 				loader.load( 'https://raw.githubusercontent.com/stewahn/collada/master/geometry.dae', function ( collada ) {
 
-					elf = collada.scene;
+					simplegeometry = collada.scene;
 
 				} );
 
@@ -100,9 +100,9 @@
 
 				var delta = clock.getDelta();
 
-				if ( elf !== undefined ) {
+				if ( simplegeometry !== undefined ) {
 
-					elf.rotation.z += delta * 0.5;
+					simplegeometry.rotation.z += delta * 0.5;
 
 				}
 
