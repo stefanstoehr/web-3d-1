@@ -3,7 +3,7 @@
 # Link: https://stefanstoehr.github.io/web-3d-1/
 
 ## Screenshot der WebApp
-![Screenshot der WebApp](https://raw.githubusercontent.com/stefanstoehr/web-3d-1/master/Screenshot.JPG)
+![Screenshot der WebApp](https://raw.githubusercontent.com/stefanstoehr/web-3d-1/master/screenshot.jpg)
 
 ### Kostenfreies Hosting eines 3D-Modells auf GitHub Pages 
 - Using three.js for displaying a simple 3d-model in the browser.
